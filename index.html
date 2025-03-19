@@ -17,28 +17,45 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 1;
 
-            animation-name: custom-gallery-item;
-            animation-duration: 12s;
+            animation-duration: 20s;
             animation-iteration-count: infinite;
-            animation-direction: alternate;
+            animation-delay: 4s;
+            /* animation-direction: alternate; */
+        }
+
+        body picture:nth-child(1) img {
+            opacity: 1;
+            animation-name: custom-gallery-item1;
+            /* animation-delay: 0s; */
         }
 
         body picture:nth-child(2) img {
-            animation-delay: 4s;
+            opacity: 0;
+            animation-name: custom-gallery-item2;
+            /* animation-delay: 4s; */
         }
 
         body picture:nth-child(3) img {
-            animation-delay: 8s;
+            opacity: 0;
+            animation-name: custom-gallery-item3;
+            /* animation-delay: 8s; */
         }
 
-        @keyframes custom-gallery-item {
+        @keyframes custom-gallery-item1 {
             0% {
                 opacity: 1;
             }
 
+            16% {
+                opacity: 0;
+            }
+
             33% {
+                opacity: 0;
+            }
+
+            50% {
                 opacity: 0;
             }
 
@@ -46,8 +63,72 @@
                 opacity: 0;
             }
 
+            80% {
+                opacity: 1;
+            }
+
             100% {
                 opacity: 1;
+            }
+        }
+
+        @keyframes custom-gallery-item2 {
+            0% {
+                opacity: 0;
+            }
+
+            16% {
+                opacity: 1;
+            }
+
+            33% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            66% {
+                opacity: 0;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes custom-gallery-item3 {
+            0% {
+                opacity: 0;
+            }
+
+            16% {
+                opacity: 0;
+            }
+
+            33% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            66% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
             }
         }
     </style>
@@ -60,13 +141,14 @@
 -->
 
 <body>
+
     <picture>
         <source
-            srcset="https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 1x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_1932,h_1086,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 2x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_2500,h_1405,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 3x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_2500,h_1405,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 4x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_2500,h_1405,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 5x"
+            srcset="https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg 1x, https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_1932,h_1086,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg 2x, https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_2722,h_1530,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg 3x, https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_2722,h_1530,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg 4x, https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_2722,h_1530,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg 5x"
             type="image/jpeg">
-        <img id="64c21c67-8705-4d2a-b3d8-de858ebf7707" class="gallery-item-visible gallery-item gallery-item-preloaded"
-            data-hook="gallery-item-image-img" data-idx="33"
-            src="https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg"
+        <img id="762bb39d-25fa-49d1-8f22-ee847872e431" class="gallery-item-visible gallery-item gallery-item-preloaded"
+            data-hook="gallery-item-image-img" data-idx="34"
+            src="https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg"
             alt="" loading="eager">
     </picture>
 
@@ -80,13 +162,14 @@
             alt="" loading="eager">
     </picture>
 
+
     <picture>
         <source
-            srcset="https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg 1x, https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_1932,h_1086,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg 2x, https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_2722,h_1530,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg 3x, https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_2722,h_1530,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg 4x, https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_2722,h_1530,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg 5x"
+            srcset="https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 1x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_1932,h_1086,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 2x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_2500,h_1405,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 3x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_2500,h_1405,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 4x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_2500,h_1405,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 5x"
             type="image/jpeg">
-        <img id="762bb39d-25fa-49d1-8f22-ee847872e431" class="gallery-item-visible gallery-item gallery-item-preloaded"
-            data-hook="gallery-item-image-img" data-idx="34"
-            src="https://static.wixstatic.com/media/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_0900c722593340a99e0a181b637737c2~mv2.jpg"
+        <img id="64c21c67-8705-4d2a-b3d8-de858ebf7707" class="gallery-item-visible gallery-item gallery-item-preloaded"
+            data-hook="gallery-item-image-img" data-idx="33"
+            src="https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg"
             alt="" loading="eager">
     </picture>
 </body>
