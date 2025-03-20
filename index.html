@@ -5,8 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Gallery</title>
-    <!-- use js for transition animation -->
-    <!-- <style>
+
+    <style>
+        body {
+            height: 600px;
+        }
+
+        .custom-gallery-root {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            overflow: hidden;
+        }
+
         .custom-gallery-root picture {
             position: absolute;
             width: 100%;
@@ -18,127 +30,20 @@
             height: 100%;
             object-fit: cover;
 
-            animation-duration: 32s;
-            animation-iteration-count: infinite;
-            /* animation-direction: alternate; */
-        }
-
-        .custom-gallery-root picture:nth-child(3) img {
+            transform: scale(1);
             opacity: 1;
-            animation-name: custom-gallery-item1;
         }
 
-        .custom-gallery-root picture:nth-child(2) img {
-            opacity: 1;
-            animation-name: custom-gallery-item2;
-            animation-delay: 8s;
+        .custom-gallery-root img.scale {
+            transition: transform 2s;
+            transform: scale(1.1);
         }
 
-        .custom-gallery-root picture:nth-child(1) img {
+        .custom-gallery-root img.no-opacity {
+            transition: opacity 1s;
             opacity: 0;
-            animation-name: custom-gallery-item3;
-            animation-delay: 16s;
         }
-
-        @keyframes custom-gallery-item1 {
-            0% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            33% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            66% {
-                opacity: 0;
-                transform: scale(1.2);
-            }
-
-            70% {
-                opacity: 0;
-                transform: scale(1);
-            }
-
-            80% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes custom-gallery-item2 {
-            0% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            33% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            66% {
-                opacity: 1;
-            }
-
-            70% {
-                opacity: 0;
-                transform: scale(1.2);
-            }
-
-            80% {
-                opacity: 0;
-                transform: scale(1);
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes custom-gallery-item3 {
-            0% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            33% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            66% {
-                opacity: 1;
-            }
-
-            70% {
-                opacity: 1;
-            }
-
-            80% {
-                opacity: 0;
-                transform: scale(1.2);
-            }
-
-            100% {
-                opacity: 0;
-                transform: scale(1);
-            }
-        }
-    </style> -->
+    </style>
 </head>
 
 <body>
@@ -159,8 +64,8 @@
                 srcset="https://static.wixstatic.com/media/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg 1x, https://static.wixstatic.com/media/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg/v1/fill/w_1932,h_1086,q_90,enc_avif,quality_auto/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg 2x, https://static.wixstatic.com/media/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg/v1/fill/w_2722,h_1530,q_90,enc_avif,quality_auto/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg 3x, https://static.wixstatic.com/media/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg/v1/fill/w_2722,h_1530,q_90,enc_avif,quality_auto/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg 4x, https://static.wixstatic.com/media/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg/v1/fill/w_2722,h_1530,q_90,enc_avif,quality_auto/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg 5x"
                 type="image/jpeg">
             <img id="b56ed633-f552-48a5-b8a1-a7f66039eff5"
-                class="gallery-item-visible gallery-item gallery-item-preloaded" data-hook="gallery-item-image-img"
-                data-idx="29"
+                class="gallery-item-visible gallery-item gallery-item-preloaded no-opacity"
+                data-hook="gallery-item-image-img" data-idx="29"
                 src="https://static.wixstatic.com/media/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_61a74e7cde504aa493325b9cdaf7ee74~mv2.jpg"
                 alt="" loading="eager">
         </picture>
@@ -171,13 +76,117 @@
                 srcset="https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 1x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_1932,h_1086,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 2x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_2500,h_1405,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 3x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_2500,h_1405,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 4x, https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_2500,h_1405,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg 5x"
                 type="image/jpeg">
             <img id="64c21c67-8705-4d2a-b3d8-de858ebf7707"
-                class="gallery-item-visible gallery-item gallery-item-preloaded" data-hook="gallery-item-image-img"
-                data-idx="33"
+                class="gallery-item-visible gallery-item gallery-item-preloaded no-opacity"
+                data-hook="gallery-item-image-img" data-idx="33"
                 src="https://static.wixstatic.com/media/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg/v1/fill/w_966,h_543,q_90,enc_avif,quality_auto/84721d_2101178040f642e4bf5b429604a232c2~mv2.jpg"
                 alt="" loading="eager">
         </picture>
 
     </div>
+
+    <script>
+        addEventListener("load", () => {
+            const customGalleryRoot = document.querySelector(".custom-gallery-root");
+            const imgs = customGalleryRoot.querySelectorAll("img");
+
+            console.log("customGalleryRoot", imgs);
+
+            imgs.forEach(img => {
+                img.addEventListener("transitionend", transitionend_transformScale);
+                img.addEventListener("transitionend", transitionend_opacity);
+            });
+
+            if (imgs[0]) {
+                imgs[0].classList.add("scale");
+            }
+        });
+
+        function transitionend_transformScale(event) {
+            if (event.propertyName == "opacity") {
+                return;
+            }
+
+            console.log("transitionend_transformScale started");
+
+            const customGalleryRoot = document.querySelector(".custom-gallery-root");
+            const imgs = customGalleryRoot.querySelectorAll("img");
+
+            const length = Array.from(imgs).length;
+
+            if (!length) {
+                return;
+            }
+
+            const lastIndex = length - 1;
+
+            const index = Array.from(imgs).indexOf(event.target) || 0;
+
+            console.log("index", index);
+
+            const currentElement = imgs[index];
+
+            const nextElementIndex = index >= lastIndex ? 0 : index + 1;
+
+            const nextElement = imgs[nextElementIndex]
+
+            if (currentElement) {
+                currentElement.classList.add("no-opacity");
+            } else {
+                console.log("currentElement not found");
+            }
+
+            if (nextElement) {
+                nextElement.classList.remove("no-opacity");
+            } else {
+                console.log("nextElement not found");
+            }
+
+            console.log("transitionend_transformScale ended");
+        }
+
+        function transitionend_opacity() {
+            if (event.propertyName == "transform") {
+                return;
+            }
+
+            console.log("transitionend_opacity started");
+
+            const customGalleryRoot = document.querySelector(".custom-gallery-root");
+            const imgs = customGalleryRoot.querySelectorAll("img");
+
+            const length = Array.from(imgs).length;
+
+            if (!length) {
+                return;
+            }
+
+            const lastIndex = length - 1;
+
+            const index = Array.from(imgs).indexOf(event.target) || 0;
+
+            console.log("index", index);
+
+            const currentElement = imgs[index];
+
+            const nextElementIndex = index >= lastIndex ? 0 : index + 1;
+
+            const nextElement = imgs[nextElementIndex]
+
+            if (currentElement) {
+                currentElement.classList.remove("scale");
+            } else {
+                console.log("currentElement not found");
+            }
+
+            if (nextElement) {
+                nextElement.classList.add("scale");
+            } else {
+                console.log("nextElement not found");
+            }
+
+            console.log("transitionend_opacity ended");
+        }
+    </script>
 </body>
 
 </html>
